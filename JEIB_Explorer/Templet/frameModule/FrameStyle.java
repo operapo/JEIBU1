@@ -149,7 +149,7 @@ class FrameSpecial extends FrameDefault{
 
 	@Override
 	public void actionRunSetup() {
-		this.jMenuItemSetup[0].addActionListener(e->{new Pane().BaisicConfiguration(new FrameSpecial(), 500, 500, new Explorer(),true);});
+		this.jMenuItemSetup[0].addActionListener(e->{new Pane().BaisicConfiguration(new FrameSpecial(), 500, 500, new Explorer(null,null),true);});
 		this.jMenuItemSetup[1].addActionListener(e->{this.dispose();});
 		super.actionRunSetup();
 	}

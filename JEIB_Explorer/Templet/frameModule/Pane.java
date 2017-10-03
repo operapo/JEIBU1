@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.util.Vector;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -21,8 +22,12 @@ import javax.swing.tree.DefaultMutableTreeNode;
 */
 
 class Explorer extends BaseSetupModule{
-	
-	
+	JComponent left;
+	JComponent right;
+	Explorer(JComponent left,JComponent right){
+		this.left = left;
+		this.right = right;
+	}
 @Override
 public void add_on_Run(JFrame j,Container container,int width,int height) {
 	DefaultMutableTreeNode root = new DefaultMutableTreeNode("root");
@@ -33,7 +38,7 @@ public void add_on_Run(JFrame j,Container container,int width,int height) {
 	jcp[0] = new JScrollPane(jtree);
 	jcp[0].setPreferredSize(new Dimension(width/2-(width/8),height));
 	JSplitPane jsp = new JSplitPane();
-	jsp.setRightComponent(new DrawComponent());
+	jsp.setRightComponent(right);
 	jsp.setLeftComponent(jcp[0]);
     container.add("Center",jsp);
     j.validate();  
